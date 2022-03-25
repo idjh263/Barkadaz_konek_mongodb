@@ -1,6 +1,28 @@
-const { Thought, User } = require('../models');
+const { Thought, User, Types } = require('../models');
 
 const thoughtController = {
+
+  getAllThought(req, res) {
+    Thought.find({})
+      .then(dbThoughtData => res.json(dbThoughtData))
+      .catch(err => {
+        console.log(err);
+        res.sendStatus(400);
+      });
+  },
+
+  // get one pizza by id
+  getThoughtById({ params }, res) {
+    Thought.findOne({ _id: params.id })
+      .then(dbThoughtData => res.json(dbThoughtData))
+      .catch(err => {
+        console.log(err);
+        res.sendStatus(400);
+      });
+  },
+
+
+
   // add Thought to user
   addThought({ params, body }, res) {
     console.log(body);
