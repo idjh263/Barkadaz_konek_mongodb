@@ -20,7 +20,7 @@ const userController = {
         .then(dbUserData => {
         if (!dbUserData) {
           res.status(404).json
-          // return;
+          return;
         }
         res.json(dbUserData)
       })
@@ -105,7 +105,7 @@ addFriend({ params }, res) {
   .catch(err => res.json(err));
 },
 deleteFriend({ params }, res) {
-        // remove friendId from userId's friend list
+        
         User.findOneAndUpdate(
             { _id: params.userId },
             { $pull: { friends: params.friendId } },
