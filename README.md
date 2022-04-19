@@ -84,4 +84,4 @@ https://opensource.org/licenses/MIT
 
 
 ## Credits 
-👪 Made by Irene with the help TA's, instructor @Trilogy, previous activity the "food festival app" 
+👪 Made by Irene with the help TA's, instructor @Trilogy, previous activity the "food festival app", vannesalane

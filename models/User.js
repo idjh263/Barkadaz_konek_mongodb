@@ -1,4 +1,4 @@
-const { Schema, model } = require('mongoose');
+const { Schema, model, Types } = require('mongoose');
 // const dateFormat = require('../utils/dateFormat');
 
 const UserSchema = new Schema(
@@ -6,13 +6,15 @@ const UserSchema = new Schema(
     userName: {
       type: String,
       required: true, 
-      trim: true
+      trim: true, 
+      unique: true
     },
     email: {
       type: String,
       required: true, 
       trim: true,
-      unique: true
+      unique: true, 
+      match: [/.+@.+\..+/]
     },
     thought: [
         {
@@ -30,7 +32,7 @@ const UserSchema = new Schema(
   {
     toJSON: {
       virtuals: true,
-      getters: true
+      // getters: true
     },
     // prevents virtuals from creating duplicate of _id as `id`
     id: false
