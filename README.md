@@ -1,4 +1,4 @@
-# Social_Net_mongoDB
+# Barkadaz_konek_mongoDB
 
 ## Project Title: 
 <h1 align="center">Social Network </h1>
